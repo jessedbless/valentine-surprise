@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's ❤️</title>
+    <style>
+      
+      /* General Styles */
+body {
+    background-color: #ffebef;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Typing Effect */
+.typing {
+    font-size: 24px;
+    color: #d63384;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid;
+    width: 0;
+    animation: typing 3s steps(40, end) forwards, blink 0.8s infinite;
+}
+
+/* Button */
+button {
+    background: #d63384;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff66a3;
+}
+
+/* Hidden Surprise Message */
+.hidden {
+    display: none;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #ff4081;
+}
+
+/* Fade-in effect */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+/* Floating Hearts Animation */
+body::before {
+    content: "❤️ 💕 💖 💞";
+    position: absolute;
+    top: 10px;
+    font-size: 50px;
+    opacity: 0.6;
+    animation: float 5s linear infinite alternate;
+}
+
+/* Keyframes */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(15px); }
+}
+
+
+
+
+    
+      /* Modal (Popup) Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    animation: popup 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #d63384;
+}
+
+/* Popup Animation */
+@keyframes popup {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="typing">Happy Valentine's Day, My Love! ❤️</h1>
+        <p class="fade-in">You are the most beautiful part of my world, and I cherish every moment with you. 💖</p>
+        
+        <button id="revealBtn">Click me!! 💌</button>
+        
+        <div id="surpriseMessage" class="hidden">
+            
+        
+        <!-- Surprise Modal -->
+<div id="surpriseModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <p>Roses are red, violets are blue,<br>
+        No one in this world is as special as you! 💘</p>
+    </div>
+</div>
+    </div>
+
+    <script>
+   // Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function() {
+  const revealBtn = document.getElementById("revealBtn");
+  const surpriseMessage = document.getElementById("surpriseMessage");
+
+  // When the button is clicked, show the surprise message
+  revealBtn.addEventListener("click", function() {
+    surpriseMessage.classList.toggle("hidden");
+    revealBtn.textContent = surpriseMessage.classList.contains("hidden") ?
+      "Click for a Surprise 💌" :
+      "Close Surprise ❌";
+  });
+});
+    </script>
+</body>
+</html>
